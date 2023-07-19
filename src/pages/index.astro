@@ -1,16 +1,35 @@
 ---
-import "../css/global.css";
+import MainLayout from "../layouts/MainLayout.astro";
+
+import ProjectCard from "../components/ProjectCard.astro";
+
+
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-white">Astro</h1>
-	</body>
-</html>
+<MainLayout>
+<main class="mx-4 mt-8">
+
+	<article class="min-w-[5rem] max-w-fit h-[90vh] mx-auto mobile:w-fit mobile:px-8 ">
+	<h3 class="text-accent_green text-lg tablet:text-2xl">Hi, my name is</h3>
+	<h1 class="stroke-effect text-4xl mobile:text-5xl tablet:text-6xl">Anders. <br> I study Web Development</h1>
+
+	<a href="#projects-overview">
+	<div class="scroll-indicator mx-auto mt-40"></div>
+	</a>
+	</article>
+
+
+	<section id="projects-overview">
+		<h2 class="text-text text-2xl mb-8">Projects</h2>
+		<section class="flex gap-8 flex-wrap justify-center">
+		<ProjectCard/>
+		<ProjectCard/>
+		<ProjectCard/>
+		<ProjectCard/>
+		</section>
+
+	</section>
+
+</main>
+</MainLayout>
+

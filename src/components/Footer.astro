@@ -1,0 +1,33 @@
+---
+import { Icon } from 'astro-icon'
+---
+
+<footer class="h-32 bg-secondary mt-8 px-4">
+    <article class="group w-fit mx-auto">
+    <div class="flex justify-center gap-6 mobile:gap-24 items-center h-20">
+
+    <a href="https://github.com/ande397c">
+    <Icon class="w-12 h-12 text-grey/80 cursor-pointer hover:text-accent_green transition duration-150" name="github" />
+    </a>
+
+    <a href="mailto: anderstrapman@gmail.com">    
+    <Icon class="w-12 h-12 text-grey/80 cursor-pointer hover:text-accent_green transition duration-150" name="mail" />
+    </a>
+
+    <a href="https://www.linkedin.com/in/anders-iversen-a82a55235/">
+    <Icon class="w-12 h-12 text-grey/80 cursor-pointer hover:text-accent_green transition duration-150" name="linkedin" />
+    </a>
+    </div>
+
+    <p class="block text-grey text-center group-hover:text-accent_green">&#169; <span id="current-year"></span> Anders Trapman Iversen</p>
+
+    </article>
+
+
+
+</footer>
+
+<script>
+const year = new Date().getFullYear();
+document.querySelector("#current-year").textContent = year.toString()
+</script>
