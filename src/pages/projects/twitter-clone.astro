@@ -1,0 +1,56 @@
+---
+
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+
+import twitter from '../../assets/twitter.png'
+
+import ProjectScreenshots from '../../components/ProjectScreenshots.astro'
+
+---
+
+<ProjectLayout>
+
+    <main class="mt-8 grid justify-center content-center gap-3 tablet:justify-normal tablet_mx-4">
+
+    <div class="tablet:mx-4">
+    <h1 class="text-accent_green text-3xl mobile:text-5xl">Twitter clone</h1>
+    </div>
+
+    <section class="grid items-center content-center tablet:grid-cols-2 tablet:mx-4">
+
+        <article>
+
+        <p class="max-w-[45ch]">I have 1 year of Web Development and Frontend Development experience. I love being creative and see things getting created, as the result of the work I do. I strive to improve myself and my skills. I currently study at 3.sem as a Frontend Designer at KEA.</p>
+
+        <div class="flex gap-8 my-8 tablet:my-4">
+        <button class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body">Demo</button>
+
+        <button class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body">Repo</button>
+        </div>
+        </article>
+
+        
+        <div>
+        <img class="object-cover max-w-lg tablet:max-w-md rounded-lg w-full" src={twitter} alt="portrat">
+        </div>
+
+    </section>
+
+        <section class="mx-4 mobile:mt-6">
+        <h2 class="text-text text-2xl">Stack</h2>
+        <article class="flex flex-wrap mt-3 justify-start gap-4 pt-2">
+        
+        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">Tailwind</div>
+        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">Javascript</div>
+        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">Python/Bottle</div>
+        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">SQLite</div>
+        </article>
+    </section>
+    
+    <ProjectScreenshots/>
+
+    </main>
+
+</ProjectLayout>
+
+

@@ -1,0 +1,31 @@
+---
+import { Icon } from 'astro-icon'
+
+---
+
+<div id="toTop" class="hide">
+<Icon class="w-6 h-6 text-secondary" name="arrow" />
+</div>
+
+<script>
+"use strict";
+window.addEventListener("load", documentReady);
+
+function documentReady() {
+
+const toTopElement = document.querySelector("#toTop");
+
+window.onscroll = function() {
+    if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight-400) {
+        toTopElement.className = "cta show";
+    } else {
+        toTopElement.className = "cta hide";
+    }
+};
+
+toTopElement.addEventListener("click", () => {
+        window.scrollTo(0, 0);
+});
+
+}
+</script>
