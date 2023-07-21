@@ -1,0 +1,16 @@
+[
+    {
+        "link": "/projects/twitter-clone/",
+        "heading": "Twitter Clone",
+        "img": "/assets/twitter-feed.png",
+        "desc": "API project from Frontend Mentor with light/dark theme."
+        
+    },
+    {
+        "link": "/projects/countries-project/",
+        "heading": "Countries API project",
+        "img": "/assets/countries-overview.png",
+        "desc": "API project from Frontend Mentor with light/dark theme."
+        
+    }
+]

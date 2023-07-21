@@ -1,0 +1,27 @@
+---
+import { Icon } from 'astro-icon'
+
+const {isFirstProject} = Astro.props
+
+---
+<article class="flex justify-evenly gap-4 mt-12 pb-4">
+
+    <div class={"flex justify-center items-center gap-2 group" + (isFirstProject ? ' opacity-30 pointer-events-none' : '')}>
+    <div class="flex justify-center items-center w-10 h-10 bg-body border  border-accent_red rounded-full group-hover:bg-accent_red cursor-pointer">
+        <Icon class="w-6 h-6 text-accent_red group-hover:text-body -rotate-90 transition-all duration-150" name="arrow" />
+    </div>
+    <p class="text-accent_red group-hover:translate-x-2
+transition-all duration-150">Previous project</p>
+
+    </div>
+
+    <div class="flex justify-center items-center gap-2 group">
+    <p class="text-accent_red group-hover:-translate-x-2
+transition-all duration-150">Next project</p>
+    <div class="flex justify-center items-center w-10 h-10 bg-body border  border-accent_red rounded-full group-hover:bg-accent_red cursor-pointer ">
+        <Icon class="w-6 h-6 text-accent_red group-hover:text-body rotate-90 transition-all duration-150" name="arrow" />
+    </div>
+
+    </div>
+
+</article>

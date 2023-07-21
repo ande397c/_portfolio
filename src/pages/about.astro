@@ -1,20 +1,20 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
-import portrait from '../assets/portrait.png'
+import portrait from '/assets/portrait.png'
 
 ---
 <MainLayout>
-<main class="mx-4 mt-8 grid justify-center content-center">
+<main class="mx-4 mt-8 grid justify-center content-center tablet:mx-12">
     <div class="mb-6">
     <h1 class="text-accent_green text-3xl mobile:text-5xl text-center">About me</h1>
     </div>
-    <article class="h-[60vh] flex justify-center items-center gap-8 flex-wrap tablet:gap-12">
+    <article class="h-[60vh] bp-730:h-[50vh] flex justify-center items-center gap-8 flex-wrap">
         <p class="max-w-[45ch] pb-6">I have 1 year of Web Development and Frontend Development experience. I love being creative and see things getting created, as the result of the work I do. I strive to improve myself and my skills. I currently study at 3.sem as a Frontend Designer at KEA.</p>
         <img class="max-w-xs max-h-52 block mx-auto tablet:max-w-sm tablet:max-h-64" src={portrait} alt="portrat">
     </article>
 
-    <section class="mt-20 mobile:mt-4 h-[20vh]">
+    <section class="mt-20 mobile:mt-4 pb-4 desktop:h-[20vh]">
         <h2 class="text-text text-2xl">Skills and experiences</h2>
         <article class="flex flex-wrap mt-3 justify-start gap-4 pt-2">
         

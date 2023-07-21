@@ -15,11 +15,12 @@ import "../styles/global.css"
 		<meta name="generator" content={Astro.generator} />
 		<title>Anders Iversen portfolio</title>
 	</head>
-	<body class="overflow-x-hidden">
+	<body>
+		<div class="overflow-x-hidden">
 		<Header/>
         <slot /> 
 		<ToTop/>
 		<Footer/>
-
+		</div>
 	</body>
 </html>

@@ -3,30 +3,38 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 import ProjectCard from "../components/ProjectCard.astro";
 
+import projectData from "../data/projects.json"
 
 ---
 
 <MainLayout>
-<main class="mx-4 mt-8">
+<main class="mx-4 mt-16">
 
-	<article class="min-w-[5rem] max-w-fit h-[90vh] mx-auto mobile:w-fit mobile:px-8">
+	<article class="h-[90vh] mx-auto w-fit p-8">
+	
 	<h3 class="text-accent_green text-lg tablet:text-2xl">Hi, my name is</h3>
-	<h1 class="stroke-effect text-4xl mobile:text-5xl tablet:text-6xl">Anders. <br> I study Web Development</h1>
+	<h1 class="stroke-effect text-4xl mobile:text-5xl tablet:text-6xl">Anders. <br> I study <span class="typewritten">Web Development</span></h1>
+
 
 	<a href="#projects-overview">
-	<div class="scroll-indicator mx-auto mt-60"></div>
+	<div class="scroll-indicator mx-auto mt-64"></div>
 	</a>
 	</article>
-	<section id="projects-overview">
-		<div class="w-full mb-12">
+	<section id="projects-overview" class="pb-8">
+		<div class="w-full mb-12 tablet:mx-12">
 		<h2 class="text-text text-2xl text-center tablet:text-left tablet:text-3xl">Projects</h2>
 		</div>
 		<section class="grid gap-6 justify-center content-center tablet:grid-cols-2 tablet:gap-10">
 
-		<ProjectCard/>
-		<ProjectCard/>
-		<ProjectCard/>
-		<ProjectCard/>
+		{projectData.map((data) =>
+		<ProjectCard
+		link={data.link}
+		heading={data.heading}
+		img={data.img}
+		desc={data.desc}
+		/>
+		)}
+			
 		</section>
 
 	</section>

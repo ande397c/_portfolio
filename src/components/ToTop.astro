@@ -16,7 +16,7 @@ function documentReady() {
 const toTopElement = document.querySelector("#toTop");
 
 window.onscroll = function() {
-    if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight-400) {
+    if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight-200) {
         toTopElement.className = "cta show";
     } else {
         toTopElement.className = "cta hide";

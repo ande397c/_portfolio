@@ -26,14 +26,16 @@ window.addEventListener("scroll", toggleNav);
 
     // Toggle burgermenu on click
     const burger = document.querySelector(".burger");
-    burger.addEventListener("click",() => toggleBurgerMenu(burger));
+    const body = document.querySelector("body");
+    burger.addEventListener("click",() => toggleBurgerMenu(burger, body));
 }
 
 // Handle burger menu toggle
-function toggleBurgerMenu(burger) {
+function toggleBurgerMenu(burger, body) {
     const links = document.querySelector(".nav_links");
     links.classList.toggle("nav_toggle");
     burger.classList.toggle("toggle");
+    body.classList.toggle("overflow-hidden")
 }
 
 function toggleNav() {
@@ -46,3 +48,4 @@ function toggleNav() {
     header.classList.remove("sticky", "toggle_nav");
   }
 }
+

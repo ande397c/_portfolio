@@ -5,12 +5,12 @@ import ProjectScreenshots from '../../components/ProjectScreenshots.astro'
 import ProjectNavigate from "../../components/ProjectNavigate.astro";
 
 // Project images
-import twitterFeed from '/assets/twitter-feed.png'
-import twitterProfile from '/assets/twitter-profile.png'
-import twitterAdmin from '/assets/twitter-admin.png'
+import countriesOverview from '/assets/countries-overview.png'
+import countriesDetailed from '/assets/countries-detailed.png'
+import countriesFiltered from '/assets/countries-filtered.png'
 
 // Navigation boolean
-const isFirstProject = true
+const isFirstProject = false
 
 ---
 
@@ -19,7 +19,7 @@ const isFirstProject = true
     <main class="mt-8 grid justify-center content-center gap-3 tablet:justify-normal tablet:mx-12">
 
     <div class="mx-4">
-    <h1 class="text-accent_green text-3xl mobile:text-5xl">Twitter clone</h1>
+    <h1 class="text-accent_green text-3xl mobile:text-5xl">Countries API project</h1>
     </div>
 
     <section class="grid items-center content-center tablet:grid-cols-2 mx-4">
@@ -37,7 +37,7 @@ const isFirstProject = true
 
         
         <div>
-        <img class="object-cover max-w-lg rounded-lg w-full" src={twitterFeed} alt="Screenshot Twitter Clone project">
+        <img class="object-cover max-w-lg rounded-lg w-full" src={countriesOverview} alt="Screenshot Twitter Clone project">
         </div>
 
     </section>
@@ -46,18 +46,17 @@ const isFirstProject = true
         <h2 class="text-text text-2xl">Stack</h2>
         <article class="flex flex-wrap mt-4 justify-start gap-4">
         
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">Tailwind</div>
+        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">HTML</div>
+        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">CSS</div>
         <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">Javascript</div>
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">Python/Bottle</div>
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">SQLite</div>
         </article>
     </section>
     
     <ProjectScreenshots
-    img_1={twitterFeed}
-    img_2={twitterProfile}
-    img_3={twitterAdmin}
-    altText="Twitter Clone"
+    img_1={countriesOverview}
+    img_2={countriesDetailed}
+    img_3={countriesFiltered}
+    altText="Countries API"
     />
 
     <ProjectNavigate isFirstProject={isFirstProject}/>
