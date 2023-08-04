@@ -9,10 +9,14 @@ const {link, heading, img, desc} = Astro.props;
 
     <h2 class="text-text text-xl tablet:text-2xl mb-4 group-hover:text-accent_green">{heading}</h2>
 
+
     <img class="object-cover max-w-lg tablet:max-w-md desktop:max-w-xl rounded-lg w-full" src={img} alt={heading}>
-    <p class="py-4 text-base tablet:text-lg">{desc}</p>
+
+
+    <p class="py-4 text-base tablet:text-lg max-w-[45ch] text-grey">{desc}</p>
     </article>
 </a>
 
 
 
+ 

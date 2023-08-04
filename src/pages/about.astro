@@ -3,29 +3,29 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 import portrait from '/assets/portrait.png'
 
+import skills from "../data/skills.json"
+
 ---
 <MainLayout>
-<main class="mx-4 mt-8 grid justify-center content-center tablet:mx-12">
+<main class="mx-4 mt-8 grid justify-center content-center tablet:mx-12"
+data-aos="fade-up" data-aos-delay="150">
     <div class="mb-6">
     <h1 class="text-accent_green text-3xl mobile:text-5xl text-center">About me</h1>
     </div>
-    <article class="h-[60vh] bp-730:h-[50vh] flex justify-center items-center gap-8 flex-wrap">
-        <p class="max-w-[45ch] pb-6">I have 1 year of Web Development and Frontend Development experience. I love being creative and see things getting created, as the result of the work I do. I strive to improve myself and my skills. I currently study at 3.sem as a Frontend Designer at KEA.</p>
-        <img class="max-w-xs max-h-52 block mx-auto tablet:max-w-sm tablet:max-h-64" src={portrait} alt="portrat">
+    <article class="h-[70vh] bp-730:h-[60vh] flex justify-center items-center flex-wrap desktop:gap-8">
+        <p class="max-w-[45ch] pb-6">Hello there! I'm Anders, a 23 year old passionate Multimedia Designer, who loves exploring the world of coding. I graduated from KEA - Copenhagen School of Design and Technology, in January 2023 with an AP degree in Multimedia Design. Those years introduced me to an exiting and dynamic world, which I'm eager to explore further. It also sparked my interest for the power of creativity and technology. This lead me to continue my studies at KEA as a Web developer. I find it very satisfying to see things getting created, as a result of the work I do.</p>
+        <img class="max-w-xs max-h-52 bp-730:max-h-60 block mx-auto tablet:max-h-72" src={portrait} alt="portrat">
     </article>
 
-    <section class="mt-20 mobile:mt-4 pb-4 desktop:h-[20vh]">
+    <section class="mt-20 mobile:mt-4 pb-4 desktop:h-[20vh] tablet:max-w-3xl">
         <h2 class="text-text text-2xl">Skills and experiences</h2>
-        <article class="flex flex-wrap mt-3 justify-start gap-4 pt-2">
+        <article class="flex flex-wrap mt-3 justify-start gap-4 pt-2">  
         
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-24">HTML</div>
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-24">CSS</div>
 
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-24">Javascript</div>
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28 max-w-[8rem]">Python/Bottle</div>
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-24">Tailwind</div>
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-24">Astro</div>
-        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-24">React</div>
+        {skills.map((skill) =>
+        <div class="bg-body rounded-xl border flex justify-center items-center border-accent_green text-accent_green h-8 w-28">{skill}</div>
+        )}
+
         </article>
     </section>
 </main>

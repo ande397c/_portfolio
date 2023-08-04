@@ -3,14 +3,14 @@
         "link": "/projects/twitter-clone/",
         "heading": "Twitter Clone",
         "img": "/assets/twitter-feed.png",
-        "desc": "API project from Frontend Mentor with light/dark theme."
+        "desc": "Full stack Twitter Clone made with Tailwind, Python and SQLite."
         
     },
     {
         "link": "/projects/countries-project/",
         "heading": "Countries API project",
         "img": "/assets/countries-overview.png",
-        "desc": "API project from Frontend Mentor with light/dark theme."
+        "desc": "Frontend Mentor project with light/dark theme. Made with vanilla Javascript."
         
     }
 ]
