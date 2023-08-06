@@ -6,20 +6,23 @@ const {img_1, img_2, img_3} = Astro.props
 const {altText} = Astro.props
 ---
 
-<section class="mx-4 mt-10">
+<section class="mx-4 mt-10"> 
     <h2 class="text-text text-2xl">Project screenshots</h2>
 
-    <article class="mt-3 pt-2 tablet:flex tablet:justify-center tablet:gap-12">
-    <div class="max-w-lg tablet:max-w-2xl">
+    <article class="max-w-2xl tablet:max-w-full mt-3 pt-2 tablet:flex tablet:justify-center tablet:gap-12">
+
+    <div class="tablet:max-w-2xl 2xl:max-w-3xl">
     <img id="main-screenshot" class="w-full h-full rounded-lg" src={img_1} alt={`screenshot ${altText} project`} >
     </div>
 
     <div class="flex gap-2 justify-between pt-6 tablet:pt-0 tablet:flex-col">
-        <img class="screenshot max-w-[8rem] max-h-32 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 active-screenshot"
+
+        <img class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 active-screenshot 2xl:max-w-full"
         src={img_1} alt={`screenshot ${altText} project`} >
 
-        <img class="screenshot max-w-[8rem] max-h-32 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100" src={img_2} alt={`screenshot ${altText} project`} >
-        <img class="screenshot max-w-[8rem] max-h-32 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100" src={img_3} alt={`screenshot ${altText} project`} >
+        <img class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 2xl:max-w-full" src={img_2} alt={`screenshot ${altText} project`} >
+
+        <img class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 2xl:max-w-full" src={img_3} alt={`screenshot ${altText} project`} >
 
     </div>
     </article>

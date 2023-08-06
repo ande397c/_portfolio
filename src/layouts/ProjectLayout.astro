@@ -17,7 +17,11 @@ import "../styles/global.css"
 	<body>
 		<div class="overflow-x-hidden">
 		<Header/>
-        <slot /> 
+
+		<main class="mt-8 grid justify-center content-center gap-3 tablet:justify-normal tablet:mx-12 2xl:ml-[12%]" data-aos="fade-up" data-aos-delay="150">
+		<slot /> 
+		</main>
+        
 		<ToTop/>
 		</div>
 	</body>
