@@ -12,5 +12,12 @@
         "img": "/assets/countries-overview.png",
         "desc": "Frontend Mentor project with light/dark theme. Made with vanilla Javascript."
         
+    },
+    {
+        "link": "/projects/rating-game/",
+        "heading": "Imdb rating game",
+        "img": "/assets/imdb-playing.png",
+        "desc": "Guess which movies/series has the highest rating. Made with vanilla Javascript."
+        
     }
 ]

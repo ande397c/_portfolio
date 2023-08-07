@@ -5,32 +5,31 @@ import ProjectScreenshots from '../../components/ProjectScreenshots.astro'
 import ProjectNavigate from "../../components/ProjectNavigate.astro";
 
 // Project images
-import countriesOverview from '/assets/countries-overview.png'
-import countriesDetailed from '/assets/countries-detailed.png'
-import countriesFiltered from '/assets/countries-filtered.png'
+import imdbPlaying from '/assets/imdb-playing.png'
+import imdbCategories from '/assets/imdb-categories.png'
+import imdbLost from '/assets/imdb-lost.png'
 
 // Navigation booleans
 const isFirstProject = false
-const isLastProject = false
+const isLastProject = true
 
 ---
 
 <ProjectLayout>
 
     <div class="mx-4">
-    <h1 class="text-accent_green text-3xl mobile:text-5xl">Countries API project</h1>
+    <h1 class="text-accent_green text-3xl mobile:text-5xl">Imdb rating game</h1>
     </div>
 
     <section class="grid items-center content-center tablet:grid-cols-2 mx-4">
 
         <article>
 
-        <p class="max-w-[45ch]">This project was done in my spare time. The project itself is an advanced challenge on 
-        <a class="text-accent_green hover:underline" href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca">Frontend Mentor.</a> The goal for me was to improve my Javascript skills while incorporating the use of a REST API. In retrospect, I would have liked to include the use of a Javascript framework in this project. </p>
+        <p class="max-w-[45ch]">This is a very personal project of mine. The idea for the project is a result of an early unbound fascination and interest for movies. This interest sparked a simple game that I would play with family and friends using the Imdb site. As I started getting more into Web Development, I thought that this simple game could be developed upon and would make for a nice sparetime project.</p>
 
         <div class="flex gap-8 my-8 tablet:my-4">
 
-        <a href="https://frontend-mentor-api-countries.netlify.app/">
+        <a href="https://imdb-rating-game.netlify.app/">
         <button class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body">Demo</button>
         </a>
 
@@ -42,7 +41,7 @@ const isLastProject = false
 
         
         <div>
-        <img class="object-cover max-w-[40rem] rounded-lg w-full tablet:max-w-2xl" src={countriesOverview} alt="Screenshot Twitter Clone project">
+        <img class="object-cover max-w-[40rem] rounded-lg w-full tablet:max-w-2xl" src={imdbPlaying} alt="Screenshot rating game">
         </div>
 
     </section>
@@ -59,17 +58,17 @@ const isLastProject = false
     </section>
     
     <ProjectScreenshots
-    img_1={countriesOverview}
-    img_2={countriesDetailed}
-    img_3={countriesFiltered}
-    altText="Countries API"
+    img_1={imdbPlaying}
+    img_2={imdbCategories}
+    img_3={imdbLost}
+    altText="Imdb rating game"
     />
 
     <ProjectNavigate
     isFirstProject={isFirstProject}
     isLastProject={isLastProject}
     linkPrevious = "/projects/twitter-clone/"
-    linkNext = "/projects/rating-game/"
+    linkNext = ""
     />
 
 </ProjectLayout>
