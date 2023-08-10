@@ -5,8 +5,9 @@ import ProjectScreenshots from '../../components/ProjectScreenshots.astro'
 import ProjectNavigate from "../../components/ProjectNavigate.astro";
 
 // Project images
-import imdbPlaying from '/assets/imdb-playing.png'
+import imdbIntro from '/assets/imdb-intro.png'
 import imdbCategories from '/assets/imdb-categories.png'
+import imdbPlaying from '/assets/imdb-playing.png'
 import imdbLost from '/assets/imdb-lost.png'
 
 // Navigation booleans
@@ -18,7 +19,7 @@ const isLastProject = true
 <ProjectLayout>
 
     <div class="mx-4">
-    <h1 class="text-accent_green text-3xl mobile:text-5xl">Imdb rating game</h1>
+    <h1 class="text-accent_green text-3xl mobile:text-5xl">IMDb rating game</h1>
     </div>
 
     <section class="grid items-center content-center tablet:grid-cols-2 mx-4">
@@ -58,7 +59,7 @@ const isLastProject = true
     </section>
     
     <ProjectScreenshots
-    img_1={imdbPlaying}
+    img_1={imdbIntro}
     img_2={imdbCategories}
     img_3={imdbLost}
     altText="Imdb rating game"

@@ -15,7 +15,7 @@
     },
     {
         "link": "/projects/rating-game/",
-        "heading": "Imdb rating game",
+        "heading": "IMDb rating game",
         "img": "/assets/imdb-playing.png",
         "desc": "Guess which movies/series has the highest rating. Made with vanilla Javascript."
         

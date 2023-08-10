@@ -8,9 +8,22 @@ import projectData from "../data/projects.json"
 ---
 
 <MainLayout>
+
 <main class="mx-4 mt-16">
 
-	<article class="h-[90vh] mx-auto w-fit mobile:p-8">
+	<!-- <div class="index-background absolute inset-0 overflow-hidden w-full h-full"></div> -->
+
+	<div data-aos="fade-down" data-aos-delay="100"  class="absolute inset-0 h-full m-auto w-[90vw] overflow-hidden">
+
+  	<div class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10"></div>
+	
+  	<div class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10"></div>
+
+  	<div class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10"></div>
+
+	</div>
+
+	<article class="relative h-[90vh] mx-auto w-fit mobile:p-8">
 	
 	<h3 data-aos="fade-up" data-aos-delay="90" class="text-accent_green text-lg tablet:text-2xl">Hi, my name is</h3>
 	<h1 data-aos="fade-up" data-aos-delay="150" class="stroke-effect text-4xl mobile:text-5xl tablet:text-6xl">Anders. <br> I study <span class="typewritten">Web Development</span></h1>
@@ -43,3 +56,40 @@ import projectData from "../data/projects.json"
 </main>
 </MainLayout>
 
+<style>
+
+.line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #52B0A3 75%, #52B0A3 100%);
+    animation: drop 10s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+.line:nth-child(1) {
+    margin-left: -35%;
+ }
+
+.line:nth-child(1)::after {
+      animation-delay: 2s;
+	}
+.line:nth-child(3) {
+    margin-left: 35%;
+ }
+.line:nth-child(3)::after {
+      animation-delay: 2.5s;
+}
+
+@keyframes drop {
+  0% {
+    top: -50%; }
+  100% {
+    top: 110%; } }
+
+
+</style>
