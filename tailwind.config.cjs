@@ -12,6 +12,7 @@ module.exports = {
 				grey: "#abb9c7",
 			},
 			screens: {
+      			'bp-460': '460px',
       			'mobile': '640px',
 				'bp-730': '730px',
       			'tablet': '1024px',
