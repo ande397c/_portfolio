@@ -1,6 +1,9 @@
 ---
 import logo from '/favicon.svg'
 
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+
 ---
 
     <header class="nav_container min-h-[12vh]">
@@ -12,11 +15,11 @@ import logo from '/favicon.svg'
 
         <ul class="nav_links flex mobile:w-5/12 justify-evenly w-full ml-auto">
            <li class="relative table-cell px-4">
-            <a href="/" class="relative inline-block text-text font-medium no-underline tracking-[0.15em]">Home</a>
+            <a href="/" class={"relative inline-block text-text font-medium no-underline tracking-[0.15em]" + (currentPath === "" ? " active-page" : "")}>Home</a>
           </li>
 
            <li class="relative table-cell px-4">
-            <a href="/about" class="relative inline-block text-text font-medium no-underline tracking-[0.15em]">About</a>
+            <a href="/about" class={"relative inline-block text-text font-medium no-underline tracking-[0.15em]" + (currentPath === "about" ? " active-page" : "")}>About</a>
           </li>
         </ul>
         <div class="burger block ml-auto pr-5 z-30 mobile:hidden hover:cursor-pointer">
