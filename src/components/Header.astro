@@ -1,35 +1,32 @@
 ---
-import logo from '/favicon.svg'
+import { Icon } from "astro-icon/components";
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
-
-
 ---
 
-    <header class="nav_container min-h-[12vh]">
-      <nav class="relative z-30 px-4 pt-4 flex justify-around items-center min-h-[8vh] transition duration-150">
-        <div class="logo-container cursor-pointer tablet:mx-12">
-        <img class="h-10 w-10" src={logo} alt="logo" />
-        </a>
-        </div>
+<header class="nav_container min-h-[12vh]">
+ <nav class="relative z-30 px-4 pt-4 flex justify-around items-center min-h-[8vh] transition duration-150">
+  <div class="logo-container cursor-pointer tablet:mx-12">
+   <!-- <img  src={logo} alt="logo" /> -->
+   <Icon class="h-10 w-10" name="logo" />
+  </div>
 
-        <ul class="nav_links flex mobile:w-5/12 justify-evenly w-full ml-auto">
-           <li class="relative table-cell px-4">
-            <a href="/" class={"relative inline-block text-text font-medium no-underline tracking-[0.15em]" + (currentPath === "" ? " active-page" : "")}>Home</a>
-          </li>
+  <ul class="nav_links flex mobile:w-5/12 justify-evenly w-full ml-auto">
+   <li class="relative table-cell px-4">
+    <a href="/" class={"relative inline-block text-text font-medium no-underline tracking-[0.15em]" + (currentPath === "" ? " active-page" : "")}>Home</a>
+   </li>
 
-           <li class="relative table-cell px-4">
-            <a href="/about" class={"relative inline-block text-text font-medium no-underline tracking-[0.15em]" + (currentPath === "about" ? " active-page" : "")}>About</a>
-          </li>
-        </ul>
-        <div class="burger block ml-auto pr-5 z-30 mobile:hidden hover:cursor-pointer">
-          <div class="line1 w-6 h-1 m-1 bg-text rounded transition duration-150"></div>
-          <div class="line2 w-6 h-1 m-1 bg-text rounded transition duration-150"></div>
-          <div class="line3 w-6 h-1 m-1 bg-text rounded transition duration-150"></div>
-        </div>
-      </nav>
-    </header>
-
+   <li class="relative table-cell px-4">
+    <a href="/about" class={"relative inline-block text-text font-medium no-underline tracking-[0.15em]" + (currentPath === "about" ? " active-page" : "")}>About</a>
+   </li>
+  </ul>
+  <div class="burger block ml-auto pr-5 z-30 mobile:hidden hover:cursor-pointer">
+   <div class="line1 w-6 h-1 m-1 bg-text rounded transition duration-150"></div>
+   <div class="line2 w-6 h-1 m-1 bg-text rounded transition duration-150"></div>
+   <div class="line3 w-6 h-1 m-1 bg-text rounded transition duration-150"></div>
+  </div>
+ </nav>
+</header>
 
 <script src="../scripts/main.js"></script>

@@ -1,76 +1,62 @@
 ---
-// Images 
+// Images
+import { Image } from "astro:assets";
+const { img_1, img_2, img_3 } = Astro.props;
 
-const {img_1, img_2, img_3} = Astro.props
-
-const {altText} = Astro.props
+const { altText } = Astro.props;
 ---
 
-<section class="mx-4 mt-10"> 
-    <h2 class="text-text text-2xl">Project screenshots</h2>
+<section class="mx-4 mt-10">
+ <h2 class="text-text text-2xl">Project screenshots</h2>
 
-    <article class="max-w-2xl tablet:max-w-full mt-3 pt-2 tablet:flex tablet:justify-center tablet:gap-12">
+ <article class="max-w-2xl tablet:max-w-full mt-3 pt-2 tablet:flex tablet:justify-center tablet:gap-12">
+  <div class="tablet:max-w-2xl 2xl:max-w-3xl">
+   <Image id="main-screenshot" class="w-full h-full rounded-lg" src={img_1} alt={`screenshot ${altText} project`} />
+  </div>
 
-    <div class="tablet:max-w-2xl 2xl:max-w-3xl">
-    <img id="main-screenshot" class="w-full h-full rounded-lg" src={img_1} alt={`screenshot ${altText} project`} >
-    </div>
+  <div class="flex gap-2 justify-between pt-6 tablet:pt-0 tablet:flex-col">
+   <Image class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 active-screenshot 2xl:max-w-full" src={img_1} alt={`screenshot ${altText} project`} />
 
-    <div class="flex gap-2 justify-between pt-6 tablet:pt-0 tablet:flex-col">
+   <Image class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 2xl:max-w-full" src={img_2} alt={`screenshot ${altText} project`} />
 
-        <img class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 active-screenshot 2xl:max-w-full"
-        src={img_1} alt={`screenshot ${altText} project`} >
-
-        <img class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 2xl:max-w-full" src={img_2} alt={`screenshot ${altText} project`} >
-
-        <img class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 2xl:max-w-full" src={img_3} alt={`screenshot ${altText} project`} >
-
-    </div>
-    </article>
-
+   <Image class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 2xl:max-w-full" src={img_3} alt={`screenshot ${altText} project`} />
+  </div>
+ </article>
 </section>
 
 <style>
+ /* ................. Screenshots .......... */
 
-  /* ................. Screenshots .......... */
+ .screenshot {
+  opacity: 0.3;
+ }
 
-.screenshot {
-opacity: 0.3;
-}
-
-.active-screenshot {
-scale: 1.1;
-opacity: 1;
-border: 1px solid var(--color-accent-red);
-}
-
+ .active-screenshot {
+  scale: 1.1;
+  opacity: 1;
+  border: 1px solid var(--color-accent-red);
+ }
 </style>
 
 <script>
+ const screenshots = document.querySelectorAll(".screenshot");
 
-const screenshots = document.querySelectorAll(".screenshot");
-
-screenshots.forEach((btn) => {
+ screenshots.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    
-    screenshots.forEach(img => img != e.target ? img.classList.remove('active-screenshot') : '');
-    const target = e.target as Element;
+   screenshots.forEach((img) => (img != e.target && img.classList.remove("active-screenshot")));
+   const target = e.target as Element;
 
-    if (target.classList.contains("active-screenshot")) {
-        return false;
-    } else {
+   if (target.classList.contains("active-screenshot")) {
+    return false;
+   } else {
+    target.classList.toggle("active-screenshot");
 
-        target.classList.toggle("active-screenshot");
+    const activeSrc = document.querySelector(".active-screenshot").getAttribute("src");
 
-        const activeSrc = document.querySelector(".active-screenshot").getAttribute("src");
+    const mainScreenshot = document.querySelector("#main-screenshot") as HTMLImageElement;
 
-        const mainScreenshot = document.querySelector("#main-screenshot") as HTMLImageElement;
-
-        mainScreenshot.src = activeSrc;
-    }
-
+    mainScreenshot.src = activeSrc;
+   }
   });
-
-});
-
+ });
 </script>
-
