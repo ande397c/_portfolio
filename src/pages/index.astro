@@ -1,146 +1,179 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-
-import ProjectCard from "../components/ProjectCard.astro";
-
-import {projectData} from "../data/projects"
-
+import MainLayout from '@layouts/MainLayout.astro'
+import ProjectCard from '@components/ProjectCard.astro'
+import { projectData } from '@data/projects'
 ---
 
 <MainLayout>
- <main class="mx-4 mt-16">
-  <!-- <div class="index-background absolute inset-0 overflow-hidden w-full h-full"></div> -->
+  <main class="mx-4 mt-16">
+    <div
+      data-aos="fade-down"
+      data-aos-delay="100"
+      class="absolute inset-0 h-full m-auto w-[90vw] overflow-hidden"
+    >
+      <div
+        class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10"
+      >
+      </div>
 
-  <div data-aos="fade-down" data-aos-delay="100" class="absolute inset-0 h-full m-auto w-[90vw] overflow-hidden">
-   <div class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10"></div>
+      <div
+        class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10 hidden bp-460:block"
+      >
+      </div>
 
-   <div class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10 hidden bp-460:block"></div>
+      <div
+        class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10"
+      >
+      </div>
+    </div>
 
-   <div class="line absolute w-[1px] h-full top-0 left-1/2 bg-white bg-opacity-10"></div>
-  </div>
+    <article
+      class="relative h-[90vh] mx-auto w-fit mobile:p-8 text-center bp-460:text-left"
+    >
+      <h3
+        data-aos="fade-up"
+        data-aos-delay="90"
+        class="text-accent_green text-lg tablet:text-2xl mb-1"
+      >
+        Hi, my name is
+      </h3>
+      <h1
+        data-aos="fade-up"
+        data-aos-delay="150"
+        class="stroke-effect text-4xl mobile:text-5xl tablet:text-6xl"
+      >
+        Anders. <br /> I study <span class="typewritten">Web Development</span>
+      </h1>
 
-  <article class="relative h-[90vh] mx-auto w-fit mobile:p-8 text-center bp-460:text-left">
-   <h3 data-aos="fade-up" data-aos-delay="90" class="text-accent_green text-lg tablet:text-2xl mb-1">Hi, my name is</h3>
-   <h1 data-aos="fade-up" data-aos-delay="150" class="stroke-effect text-4xl mobile:text-5xl tablet:text-6xl">Anders. <br /> I study <span class="typewritten">Web Development</span></h1>
+      <a href="#projects-overview">
+        <div class="scroll-indicator mx-auto mt-64"></div>
+      </a>
+    </article>
 
-   <a href="#projects-overview">
-    <div class="scroll-indicator mx-auto mt-64"></div>
-   </a>
-  </article>
-
-  <section id="projects-overview" class="pb-8">
-   <div class="w-full mb-12 tablet:mx-12">
-    <h2 class="text-text text-2xl text-center tablet:text-left tablet:text-3xl">Projects</h2>
-   </div>
-   <section class="grid gap-6 justify-center content-center tablet:grid-cols-2 tablet:gap-10">
-    {projectData.map((data) => <ProjectCard data={data} />)}
-   </section>
-  </section>
- </main>
+    <section id="projects-overview" class="pb-8">
+      <div class="w-full mb-12 tablet:mx-12">
+        <h2
+          class="text-text text-2xl text-center tablet:text-left tablet:text-3xl"
+        >
+          Projects
+        </h2>
+      </div>
+      <section
+        class="grid gap-6 justify-center content-center tablet:grid-cols-2 tablet:gap-10"
+      >
+        {projectData.map((data) => <ProjectCard data={data} />)}
+      </section>
+    </section>
+  </main>
 </MainLayout>
 
 <style>
- /* ................. Background animation .......... */
- .line::after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 15vh;
-  width: 100%;
-  top: -50%;
-  left: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #52b0a3 75%, #52b0a3 100%);
-  animation: drop 7s 0s infinite;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
- }
- .line:nth-child(1) {
-  margin-left: -35%;
- }
-
- .line:nth-child(1)::after {
-  animation-delay: 2s;
- }
- .line:nth-child(3) {
-  margin-left: 35%;
- }
- .line:nth-child(3)::after {
-  animation-delay: 2.5s;
- }
-
- @keyframes drop {
-  0% {
-   top: -50%;
+  /* ................. Background animation .......... */
+  .line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 15vh;
+    width: 100%;
+    top: -50%;
+    left: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      #52b0a3 75%,
+      #52b0a3 100%
+    );
+    animation: drop 7s 0s infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
   }
-  100% {
-   top: 110%;
-  }
- }
-
- /* ................. Stroke effect .......... */
- .stroke-effect {
-  color: var(--color-secondary);
-  -webkit-text-stroke: 1px var(--color-text);
- }
-
- /* ................. Scroll indicator .......... */
- .scroll-indicator {
-  width: 40px;
-  height: 60px;
-  border: 2px solid var(--color-accent-green);
-  border-radius: 50px;
-  position: relative;
-  box-shadow: 0px 0px 35px -5px var(--color-accent-green);
-  background: var(--color-body);
- }
-
- .scroll-indicator::before {
-  content: "";
-  position: absolute;
-  top: 0.5em;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  background-color: var(--color-accent-green);
-  border-radius: 50%;
-  transform: translate(-50%, 0);
-  animation: scrollAnim 1.8s 0.5s infinite ease-in;
-  box-shadow: 0px 0px 35px -5px var(--color-accent-green);
- }
-
- /* ................. Scroll indicator animation .......... */
- @keyframes scrollAnim {
-  0% {
-   transform: translate(-50%, 0) rotateX(0);
-   opacity: 0;
+  .line:nth-child(1) {
+    margin-left: -35%;
   }
 
-  5% {
-   opacity: 0.5;
+  .line:nth-child(1)::after {
+    animation-delay: 2s;
+  }
+  .line:nth-child(3) {
+    margin-left: 35%;
+  }
+  .line:nth-child(3)::after {
+    animation-delay: 2.5s;
   }
 
-  15% {
-   opacity: 1;
+  @keyframes drop {
+    0% {
+      top: -50%;
+    }
+    100% {
+      top: 110%;
+    }
   }
 
-  90%,
-  100% {
-   opacity: 0;
+  /* ................. Stroke effect .......... */
+  .stroke-effect {
+    color: var(--color-secondary);
+    -webkit-text-stroke: 1px var(--color-text);
   }
 
-  100% {
-   transform: translate(-50%, 30px) rotateX(30deg);
+  /* ................. Scroll indicator .......... */
+  .scroll-indicator {
+    width: 40px;
+    height: 60px;
+    border: 2px solid var(--color-accent-green);
+    border-radius: 50px;
+    position: relative;
+    box-shadow: 0px 0px 35px -5px var(--color-accent-green);
+    background: var(--color-body);
   }
- }
 
- /* ................. Scroll indicator hover effect .......... */
+  .scroll-indicator::before {
+    content: '';
+    position: absolute;
+    top: 0.5em;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-accent-green);
+    border-radius: 50%;
+    transform: translate(-50%, 0);
+    animation: scrollAnim 1.8s 0.5s infinite ease-in;
+    box-shadow: 0px 0px 35px -5px var(--color-accent-green);
+  }
 
- .scroll-indicator:hover {
-  background-color: var(--color-accent-green);
-  cursor: pointer;
- }
+  /* ................. Scroll indicator animation .......... */
+  @keyframes scrollAnim {
+    0% {
+      transform: translate(-50%, 0) rotateX(0);
+      opacity: 0;
+    }
 
- .scroll-indicator:hover::before {
-  background-color: var(--color-body);
- }
+    5% {
+      opacity: 0.5;
+    }
+
+    15% {
+      opacity: 1;
+    }
+
+    90%,
+    100% {
+      opacity: 0;
+    }
+
+    100% {
+      transform: translate(-50%, 30px) rotateX(30deg);
+    }
+  }
+
+  /* ................. Scroll indicator hover effect .......... */
+
+  .scroll-indicator:hover {
+    background-color: var(--color-accent-green);
+    cursor: pointer;
+  }
+
+  .scroll-indicator:hover::before {
+    background-color: var(--color-body);
+  }
 </style>

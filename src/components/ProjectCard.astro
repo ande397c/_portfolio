@@ -1,16 +1,26 @@
 ---
-const { data } = Astro.props;
-import { Image } from "astro:assets";
-
-console.log(data.img)
+import { Image } from 'astro:assets'
+const { data } = Astro.props
 ---
 
 <a href={data.link} class="w-fit mx-auto">
- <article class="cursor-pointer group hover:-translate-y-2 transition duration-150">
-  <h2 class="text-text text-xl tablet:text-2xl mb-4 group-hover:text-accent_green">{data.heading}</h2>
+  <article
+    class="cursor-pointer group hover:-translate-y-2 transition duration-150"
+  >
+    <h2
+      class="text-text text-xl tablet:text-2xl mb-4 group-hover:text-accent_green"
+    >
+      {data.heading}
+    </h2>
 
-  <Image class="object-cover max-w-lg tablet:max-w-md desktop:max-w-xl rounded-lg w-full" src={data.img} alt={data.heading} />
+    <Image
+      class="object-cover max-w-lg tablet:max-w-md desktop:max-w-xl rounded-lg w-full"
+      src={data.img}
+      alt={data.heading}
+    />
 
-  <p class="py-4 text-base tablet:text-lg max-w-[45ch] text-grey">{data.desc}</p>
- </article>
+    <p class="py-4 text-base tablet:text-lg max-w-[45ch] text-grey">
+      {data.desc}
+    </p>
+  </article>
 </a>

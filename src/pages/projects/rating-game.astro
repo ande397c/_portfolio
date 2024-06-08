@@ -1,60 +1,78 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
 // Layout and components
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
-import ProjectScreenshots from "../../components/ProjectScreenshots.astro";
-import ProjectNavigate from "../../components/ProjectNavigate.astro";
-import Chip from "../../components/Chip.astro";
+import ProjectLayout from '@layouts/ProjectLayout.astro'
+import ProjectScreenshots from '@components/ProjectScreenshots.astro'
+import ProjectNavigate from '@components/ProjectNavigate.astro'
+import Chip from '@components/Chip.astro'
 
 // Project images
-import imdbIntro from "../../assets/imdb-intro.png";
-import imdbCategories from "../../assets/imdb-categories.png";
-import imdbPlaying from "../../assets/imdb-playing.png";
-import imdbLost from "../../assets/imdb-lost.png";
-import Button from "../../components/Button.astro";
+import imdbIntro from '@assets/imdb-intro.png'
+import imdbCategories from '@assets/imdb-categories.png'
+import imdbPlaying from '@assets/imdb-playing.png'
+import imdbLost from '@assets/imdb-lost.png'
+import Button from '@components/Button.astro'
 
 // Navigation booleans
-const isFirstProject = false;
-const isLastProject = true;
+const isFirstProject = false
+const isLastProject = true
 ---
 
 <ProjectLayout>
- <div class="mx-4">
-  <h1 class="text-accent_green text-3xl mobile:text-5xl">IMDb rating game</h1>
- </div>
+  <div class="mx-4">
+    <h1 class="text-accent_green text-3xl mobile:text-5xl">IMDb rating game</h1>
+  </div>
 
- <section class="grid items-center content-center tablet:grid-cols-2 mx-4">
-  <article>
-   <p class="max-w-[45ch]">
-    This is a very personal project of mine. The idea for the project is a result of an early unbound fascination and interest for movies. This interest sparked a simple game that I would play with family and friends using the Imdb site. As I started getting more into Web Development, I thought that this simple game could be developed upon and
-    would make for a nice sparetime project.
-   </p>
+  <section class="grid items-center content-center tablet:grid-cols-2 mx-4">
+    <article>
+      <p class="max-w-[45ch]">
+        This is a very personal project of mine. The idea for the project is a
+        result of an early unbound fascination and interest for movies. This
+        interest sparked a simple game that I would play with family and friends
+        using the Imdb site. As I started getting more into Web Development, I
+        thought that this simple game could be developed upon and would make for
+        a nice sparetime project.
+      </p>
 
-   <div class="flex gap-8 my-8 tablet:my-4">
-    <Button link="https://imdb-rating-game.netlify.app/" value="Demo" />
-    <!-- 
+      <div class="flex gap-8 my-8 tablet:my-4">
+        <Button link="https://imdb-rating-game.netlify.app/" value="Demo" />
+        <!-- 
         <a href="https://github.com/ande397c/Frontend-Mentor-rest-countries-api">
         <button class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body">Repo</button>
         </a> -->
-   </div>
-  </article>
+      </div>
+    </article>
 
-  <div>
-   <Image class="object-cover max-w-[40rem] rounded-lg w-full tablet:max-w-2xl" src={imdbPlaying} alt="Screenshot rating game" />
-  </div>
- </section>
+    <div>
+      <Image
+        class="object-cover max-w-[40rem] rounded-lg w-full tablet:max-w-2xl"
+        src={imdbPlaying}
+        alt="Screenshot rating game"
+      />
+    </div>
+  </section>
 
- <section class="mx-4 mt-6">
-  <h2 class="text-text text-2xl">Stack / technologies</h2>
-  <article class="flex flex-wrap mt-4 justify-start gap-4">
-   <Chip value="HTML" />
-   <Chip value="CSS" />
-   <Chip value="Javascript" />
-   <Chip value="REST API" />
-  </article>
- </section>
+  <section class="mx-4 mt-6">
+    <h2 class="text-text text-2xl">Stack / technologies</h2>
+    <article class="flex flex-wrap mt-4 justify-start gap-4">
+      <Chip value="HTML" />
+      <Chip value="CSS" />
+      <Chip value="Javascript" />
+      <Chip value="REST API" />
+    </article>
+  </section>
 
- <ProjectScreenshots img_1={imdbIntro} img_2={imdbCategories} img_3={imdbLost} altText="Imdb rating game" />
+  <ProjectScreenshots
+    img_1={imdbIntro}
+    img_2={imdbCategories}
+    img_3={imdbLost}
+    altText="Imdb rating game"
+  />
 
- <ProjectNavigate isFirstProject={isFirstProject} isLastProject={isLastProject} linkPrevious="/projects/twitter-clone/" linkNext="" />
+  <ProjectNavigate
+    isFirstProject={isFirstProject}
+    isLastProject={isLastProject}
+    linkPrevious="/projects/twitter-clone/"
+    linkNext=""
+  />
 </ProjectLayout>

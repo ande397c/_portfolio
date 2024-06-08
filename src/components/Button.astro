@@ -1,22 +1,28 @@
 ---
 interface Props {
- value?: string;
- link?: string;
- id?: string;
+  value?: string
+  link?: string
+  id?: string
 }
-const { value, link, id } = Astro.props;
+const { value, link, id } = Astro.props
 ---
 
 {
- link ? (
-  <a href={link} target="_blank">
-   <button id={id && id} class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body">
-    {value}
-   </button>
-  </a>
- ) : (
-  <button id={id && id} class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body">
-   {value}
-  </button>
- )
+  link ? (
+    <a href={link} target="_blank">
+      <button
+        id={id && id}
+        class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body"
+      >
+        {value}
+      </button>
+    </a>
+  ) : (
+    <button
+      id={id && id}
+      class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body"
+    >
+      {value}
+    </button>
+  )
 }

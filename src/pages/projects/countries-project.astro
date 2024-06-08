@@ -1,59 +1,87 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
 
 // Layout and components
-import ProjectLayout from "../../layouts/ProjectLayout.astro";
-import ProjectScreenshots from "../../components/ProjectScreenshots.astro";
-import ProjectNavigate from "../../components/ProjectNavigate.astro";
-import Chip from "../../components/Chip.astro";
+import ProjectLayout from '@layouts/ProjectLayout.astro'
+import ProjectScreenshots from '@components/ProjectScreenshots.astro'
+import ProjectNavigate from '@components/ProjectNavigate.astro'
+import Chip from '@components/Chip.astro'
 
 // Project images
-import countriesOverview from "../../assets/countries-overview.png";
-import countriesOverviewLight from "../../assets/countries-overview-light.png";
-import countriesDetailed from "../../assets/countries-detailed.png";
-import countriesFiltered from "../../assets/countries-filtered.png";
-import Button from "../../components/Button.astro";
+import countriesOverview from '@assets/countries-overview.png'
+import countriesOverviewLight from '@assets/countries-overview-light.png'
+import countriesDetailed from '@assets/countries-detailed.png'
+import countriesFiltered from '@assets/countries-filtered.png'
+import Button from '@components/Button.astro'
 
 // Navigation booleans
-const isFirstProject = false;
-const isLastProject = false;
+const isFirstProject = false
+const isLastProject = false
 ---
 
 <ProjectLayout>
- <div class="mx-4">
-  <h1 class="text-accent_green text-3xl mobile:text-5xl">Countries API project</h1>
- </div>
-
- <section class="grid items-center content-center tablet:grid-cols-2 mx-4">
-  <article>
-   <p class="max-w-[45ch]">
-    This project was done in my spare time. The project itself is an advanced challenge on
-    <a class="text-accent_green hover:underline" href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca">Frontend Mentor.</a> The goal for me was to improve my Javascript skills while incorporating the use of a REST API. In retrospect, I would have liked to include the use of a Javascript
-    framework in this project.
-   </p>
-
-   <div class="flex gap-8 my-8 tablet:my-4">
-    <Button link="https://frontend-mentor-api-countries.netlify.app/" value="Demo" />
-    <Button link="https://github.com/ande397c/Frontend-Mentor-rest-countries-api" value="Repo" />
-   </div>
-  </article>
-
-  <div>
-   <Image class="object-cover max-w-[40rem] rounded-lg w-full tablet:max-w-2xl" src={countriesOverview} alt="Screenshot Twitter Clone project" />
+  <div class="mx-4">
+    <h1 class="text-accent_green text-3xl mobile:text-5xl">
+      Countries API project
+    </h1>
   </div>
- </section>
 
- <section class="mx-4 mt-6">
-  <h2 class="text-text text-2xl">Stack / technologies</h2>
-  <article class="flex flex-wrap mt-4 justify-start gap-4">
-   <Chip value="HTML" />
-   <Chip value="CSS" />
-   <Chip value="Javascript" />
-   <Chip value="REST API" />
-  </article>
- </section>
+  <section class="grid items-center content-center tablet:grid-cols-2 mx-4">
+    <article>
+      <p class="max-w-[45ch]">
+        This project was done in my spare time. The project itself is an
+        advanced challenge on
+        <a
+          class="text-accent_green hover:underline"
+          href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca"
+          >Frontend Mentor.</a
+        > The goal for me was to improve my Javascript skills while incorporating
+        the use of a REST API. In retrospect, I would have liked to include the use
+        of a Javascript framework in this project.
+      </p>
 
- <ProjectScreenshots img_1={countriesOverviewLight} img_2={countriesDetailed} img_3={countriesFiltered} altText="Countries API" />
+      <div class="flex gap-8 my-8 tablet:my-4">
+        <Button
+          link="https://frontend-mentor-api-countries.netlify.app/"
+          value="Demo"
+        />
+        <Button
+          link="https://github.com/ande397c/Frontend-Mentor-rest-countries-api"
+          value="Repo"
+        />
+      </div>
+    </article>
 
- <ProjectNavigate isFirstProject={isFirstProject} isLastProject={isLastProject} linkPrevious="/projects/twitter-clone/" linkNext="/projects/rating-game/" />
+    <div>
+      <Image
+        class="object-cover max-w-[40rem] rounded-lg w-full tablet:max-w-2xl"
+        src={countriesOverview}
+        alt="Screenshot Twitter Clone project"
+      />
+    </div>
+  </section>
+
+  <section class="mx-4 mt-6">
+    <h2 class="text-text text-2xl">Stack / technologies</h2>
+    <article class="flex flex-wrap mt-4 justify-start gap-4">
+      <Chip value="HTML" />
+      <Chip value="CSS" />
+      <Chip value="Javascript" />
+      <Chip value="REST API" />
+    </article>
+  </section>
+
+  <ProjectScreenshots
+    img_1={countriesOverviewLight}
+    img_2={countriesDetailed}
+    img_3={countriesFiltered}
+    altText="Countries API"
+  />
+
+  <ProjectNavigate
+    isFirstProject={isFirstProject}
+    isLastProject={isLastProject}
+    linkPrevious="/projects/twitter-clone/"
+    linkNext="/projects/rating-game/"
+  />
 </ProjectLayout>
