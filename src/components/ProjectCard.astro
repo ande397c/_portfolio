@@ -14,6 +14,7 @@ const { data } = Astro.props
     </h2>
 
     <Image
+      transition:name={data.tag}
       class="object-cover max-w-lg tablet:max-w-md desktop:max-w-xl rounded-lg w-full"
       src={data.img}
       alt={data.heading}

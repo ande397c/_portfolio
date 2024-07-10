@@ -65,10 +65,11 @@ p {
   font-weight: 500;
 }
 
-.nav_container a:hover:after {
+.nav_container ul a:hover:after {
   width: 100%;
   left: 0;
 }
+
 .active-page {
   font-weight: 500 !important;
   color: var(--color-text) !important;

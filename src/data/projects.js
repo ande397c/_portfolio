@@ -8,17 +8,20 @@ export const projectData = [
     heading: 'Twitter Clone',
     img: twitterImage,
     desc: 'Full stack Twitter Clone made with Tailwind, Python and SQLite.',
+    tag: 'twitter'
   },
   {
     link: '/projects/countries-project/',
     heading: 'Countries API project',
     img: countriesImage,
-    desc: 'Frontend Mentor project with light/dark theme. Made with vanilla Javascript.',
+    desc: 'Frontend Mentor project with light/dark theme. Made with vanilla JavaScript.',
+    tag: 'countries'
   },
   {
     link: '/projects/rating-game/',
     heading: 'IMDb rating game',
     img: imdbImage,
-    desc: 'Guess which movies/series has the highest rating. Game Made with vanilla Javascript.',
+    desc: 'Guess which movies/series has the highest rating. Game Made with vanilla JavaScript.',
+    tag: 'imdb'
   },
 ]
