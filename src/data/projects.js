@@ -19,9 +19,9 @@ export const projectData = [
   },
   {
     link: '/projects/rating-game/',
-    heading: 'IMDb rating game',
+    heading: 'Movie rating game',
     img: imdbImage,
-    desc: 'Guess which movies/series has the highest rating. Game Made with vanilla JavaScript.',
+    desc: 'Guess which movie has the highest rating. Game Made with React and TypeScript.',
     tag: 'imdb'
   },
 ]
