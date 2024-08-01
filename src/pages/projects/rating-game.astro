@@ -8,14 +8,10 @@ import Chip from '@components/Chip.astro'
 
 // Project images
 import imdbIntro from '@assets/imdb-intro.png'
-import imdbCategories from '@assets/imdb-categories.png'
+import imdbHighscores from '@assets/imdb-highscores.png'
 import imdbPlaying from '@assets/imdb-playing.png'
 import imdbLost from '@assets/imdb-lost.png'
 import Button from '@components/Button.astro'
-
-// Navigation booleans
-const isFirstProject = false
-const isLastProject = true
 ---
 
 <ProjectLayout>
@@ -27,11 +23,7 @@ const isLastProject = true
     <article>
       <p class="max-w-[45ch]">
         This is a very personal project of mine. The idea for the project is a
-        result of an early unbound fascination and interest for movies. This
-        interest sparked a simple game that I would play with family and friends
-        using the Imdb site. As I started getting more into Web Development, I
-        thought that this simple game could be developed upon and would make for
-        a nice sparetime project.
+        result of an early unbound fascination and interest for movies. As I started getting more into Web Development, I thought that it would make for a nice sparetime project. The site uses a 
       </p>
 
       <div class="flex gap-8 my-8 tablet:my-4">
@@ -55,8 +47,8 @@ const isLastProject = true
   <section class="mx-4 mt-6">
     <h2 class="text-text text-2xl">Stack / technologies</h2>
     <article class="flex flex-wrap mt-4 justify-start gap-4">
-      <Chip value="React" />
       <Chip value="Tailwind" />
+      <Chip value="React" />
       <Chip value="TypeScript" />
       <!-- <Chip value="REST API" /> -->
     </article>
@@ -64,15 +56,13 @@ const isLastProject = true
 
   <ProjectScreenshots
     img_1={imdbIntro}
-    img_2={imdbPlaying}
+    img_2={imdbHighscores}
     img_3={imdbLost}
     altText="Imdb rating game"
   />
 
   <ProjectNavigate
-    isFirstProject={isFirstProject}
-    isLastProject={isLastProject}
-    linkPrevious="/projects/twitter-clone/"
+    linkPrevious="/projects/countries-project/"
     linkNext=""
   />
 </ProjectLayout>

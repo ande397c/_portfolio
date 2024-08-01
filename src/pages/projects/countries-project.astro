@@ -13,10 +13,6 @@ import countriesOverviewLight from '@assets/countries-overview-light.png'
 import countriesDetailed from '@assets/countries-detailed.png'
 import countriesFiltered from '@assets/countries-filtered.png'
 import Button from '@components/Button.astro'
-
-// Navigation booleans
-const isFirstProject = false
-const isLastProject = false
 ---
 
 <ProjectLayout>
@@ -79,8 +75,6 @@ const isLastProject = false
   />
 
   <ProjectNavigate
-    isFirstProject={isFirstProject}
-    isLastProject={isLastProject}
     linkPrevious="/projects/twitter-clone/"
     linkNext="/projects/rating-game/"
   />

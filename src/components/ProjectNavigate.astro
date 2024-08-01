@@ -1,14 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { isFirstProject, isLastProject } = Astro.props
+// const { isFirstProject, isLastProject } = Astro.props
 const { linkPrevious, linkNext } = Astro.props
 ---
 
 <article class="flex justify-evenly gap-4 mt-12 pb-4">
   <div
     class={'flex justify-center items-center gap-2 group' +
-      (isFirstProject ? ' opacity-30 pointer-events-none' : '')}
+      (linkPrevious === "" ? ' opacity-30 pointer-events-none' : '')}
   >
     <a href={linkPrevious}>
       <div
@@ -30,7 +30,7 @@ transition-all duration-150"
 
   <div
     class={'flex justify-center items-center gap-2 group' +
-      (isLastProject ? ' opacity-30 pointer-events-none' : '')}
+      (linkNext === "" ? ' opacity-30 pointer-events-none' : '')}
   >
     <p
       class="text-accent_red group-hover:-translate-x-2
