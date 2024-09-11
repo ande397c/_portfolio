@@ -3,6 +3,7 @@ export const skills = [
   'CSS',
   'Tailwind',
   'JavaScript',
+  'TypeScript',
   'APIs',
   'Git',
   'Python',

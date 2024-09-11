@@ -1,0 +1,68 @@
+---
+import { projectData } from '@data/projects'
+
+import { Image } from 'astro:assets'
+
+// Layout and components
+import ProjectLayout from '@layouts/ProjectLayout.astro'
+import ProjectScreenshots from '@components/ProjectScreenshots.astro'
+import ProjectNavigate from '@components/ProjectNavigate.astro'
+import Chip from '@components/Chip.astro'
+import Button from '@components/Button.astro'
+
+export async function getStaticPaths() {
+  return projectData.map(({ slug, heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots }) => {
+    return {
+      params: { slug },
+      props: { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots },
+    };
+  });
+}
+
+const { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots } = Astro.props;
+---
+<ProjectLayout>
+  <div class="mx-4">
+    <h1 class="text-accent_green text-3xl mobile:text-5xl">{heading}</h1>
+  </div>
+
+  <section class="grid items-center content-center tablet:grid-cols-2 mx-4">
+    <article>
+      <p class="max-w-[45ch]">{intro}</p>
+
+      <div class="flex gap-8 my-8 tablet:my-4">
+        <Button link={demoLink} value="Demo" />
+        <Button link={repoLink} value="Repo" />
+      </div>
+    </article>
+
+    <!-- <div>
+      <Image
+        class="object-cover max-w-[40rem] rounded-lg w-full tablet:max-w-2xl"
+        src={projectImg}
+        alt="Screenshot rating game"
+      />
+    </div> -->
+  </section>
+
+  <section class="mx-4 mt-6">
+    <h2 class="text-text text-2xl">Stack / technologies</h2>
+    <article class="flex flex-wrap mt-4 justify-start gap-4 max-w-[70%]">
+      {stack.map((value: string)=>(
+        <Chip value={value} />
+      ))}
+    </article>
+  </section>
+
+  <!-- <ProjectScreenshots
+    img_1={screenshots[0]}
+    img_2={screenshots[1]}
+    img_3={screenshots[2]}
+    altText="Imdb rating game"
+  /> -->
+
+  <ProjectNavigate
+    linkPrevious={navigateLinks.linkPrevious}
+    linkNext={navigateLinks.linkNext}
+  />
+</ProjectLayout>

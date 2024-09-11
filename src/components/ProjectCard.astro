@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 const { data } = Astro.props
 ---
 
-<a href={data.link} class="w-fit mx-auto">
+<a href={data.slug} class="w-fit mx-auto">
   <article
     class="cursor-pointer group hover:-translate-y-2 transition duration-150"
   >
@@ -16,7 +16,7 @@ const { data } = Astro.props
     <Image
       transition:name={data.tag}
       class="object-cover max-w-lg tablet:max-w-md desktop:max-w-xl rounded-lg w-full"
-      src={data.img}
+      src={data.projectImg}
       alt={data.heading}
     />
 
