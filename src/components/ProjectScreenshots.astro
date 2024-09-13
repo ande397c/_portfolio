@@ -44,7 +44,6 @@ const { altText } = Astro.props
 </section>
 
 <style>
-  /* ................. Screenshots .......... */
 
   .screenshot {
     opacity: 0.3;
@@ -67,9 +66,7 @@ const { altText } = Astro.props
       )
       const target = e.target as Element
 
-      if (target.classList.contains('active-screenshot')) {
-        return false
-      } else {
+      if (!target.classList.contains('active-screenshot')) {
         target.classList.toggle('active-screenshot')
 
         const activeSrc = document
@@ -82,6 +79,7 @@ const { altText } = Astro.props
 
         mainScreenshot.src = activeSrc
       }
+      return false
     })
   })
 </script>

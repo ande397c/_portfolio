@@ -12,15 +12,16 @@ const { data } = Astro.props
     >
       {data.heading}
     </h2>
+    <div class="relative h-64">
+      <Image
+        transition:name={data.tag}
+        class="w-full h-full rounded-lg"
+        src={data.projectImg}
+        alt={data.heading}
+      />
+    </div>
 
-    <Image
-      transition:name={data.tag}
-      class="object-cover max-w-lg tablet:max-w-md desktop:max-w-xl rounded-lg w-full"
-      src={data.projectImg}
-      alt={data.heading}
-    />
-
-    <p class="py-4 text-base tablet:text-lg max-w-[45ch] text-grey">
+    <p class="py-4 text-base tablet:text-lg max-w-[60ch] tablet:max-w-[45ch] text-grey">
       {data.desc}
     </p>
   </article>

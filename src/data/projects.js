@@ -10,6 +10,12 @@ import imdbImage from '@assets/imdb-playing.png'
 import imdbIntro from '@assets/imdb-intro.png'
 import imdbHighscores from '@assets/imdb-highscores.png'
 import imdbLost from '@assets/imdb-lost.png'
+// Weather
+import weahterIntro from '@assets/weather-intro.png'
+import weatherEdit from '@assets/weather-edit.png'
+import weatherSingle from '@assets/weather-single.png'
+import weatherSingle2 from '@assets/weather-single-2.png'
+
 
 export const projectData = [
   {
@@ -57,43 +63,43 @@ export const projectData = [
   {
     slug: 'projects/weather-app/',
     heading: 'Weather app',
-    projectImg: imdbImage,
-    desc: 'Ios weather app clone. Made with React, Tailwind and Typescript',
+    projectImg: weahterIntro,
+    desc: 'IOS weather app clone. Made with React, Tailwind and Typescript',
     tag: 'weather',
     intro:
-      'This project is a clone of the ios weather app. The project used weather data from the OpenWeatherMap API to get both coordinates and actual Data. ',
-    demoLink: 'https://rating-guess.netlify.app/',
-    repoLink: 'https://github.com/ande397c/react-movie-rating/tree/main',
+      'This project is a clone of the iOS Weather app. It uses Axios for easier integration with the OpenWeatherMap API and ESLint to identify and fix issues in the JavaScript code. The goal is to replicate the UI elements and features of the iOS app. In the future, this project will serve as a solid foundation for working with mobile development, such as React Native or Expo.',
+    demoLink: 'https://horizonwatch.netlify.app/',
+    repoLink: 'https://github.com/ande397c/weather-app',
     stack: ['Tailwind', 'React', 'TypeScript', 'REST API'],
     navigateLinks: {
       linkPrevious: '/projects/rating-game/',
-      linkNext: '/projects/kanban-board/',
-    },
-    screenshots: {
-      img1: imdbIntro,
-      img2: imdbHighscores,
-      img3: imdbLost,
-    },
-  },
-  {
-    slug: 'projects/kanban-board/',
-    heading: 'Kanban board',
-    projectImg: imdbImage,
-    desc: 'Kanban board, made with Vue3, Vuetify, Typescript and testet using Vitest.',
-    tag: 'kanban',
-    intro:
-      'This project was made to introduce myself to Vue and to corresponding technologies, like the ui library Vuetify. The board supports functionalities like, deleting and adding tasks and lists and dragging tasks. I am planning to hook the data up to a real backend to allow for data persistence.',
-    demoLink: 'https://vue-board-kanban.netlify.app/',
-    repoLink: 'https://github.com/ande397c/vue-kanban-board',
-    stack: ['Vue', 'Vuetify', 'TypeScript', 'Vitest'],
-    navigateLinks: {
-      linkPrevious: '/projects/weather-app/',
       linkNext: '',
     },
     screenshots: {
-      img1: imdbIntro,
-      img2: imdbHighscores,
-      img3: imdbLost,
+      img1: weatherEdit,
+      img2: weatherSingle,
+      img3: weatherSingle2,
     },
   },
+  // {
+  //   slug: 'projects/kanban-board/',
+  //   heading: 'Kanban board',
+  //   projectImg: imdbImage,
+  //   desc: 'Kanban board, made with Vue3, Vuetify, Typescript and testet using Vitest.',
+  //   tag: 'kanban',
+  //   intro:
+  //     'This project was made to introduce myself to Vue and to corresponding technologies, like the ui library Vuetify. The board supports functionalities like, deleting and adding tasks and lists and dragging tasks. I am planning to hook the data up to a real backend to allow for data persistence.',
+  //   demoLink: 'https://vue-board-kanban.netlify.app/',
+  //   repoLink: 'https://github.com/ande397c/vue-kanban-board',
+  //   stack: ['Vue', 'Vuetify', 'TypeScript', 'Vitest'],
+  //   navigateLinks: {
+  //     linkPrevious: '/projects/weather-app/',
+  //     linkNext: '',
+  //   },
+  //   screenshots: {
+  //     img1: imdbIntro,
+  //     img2: imdbHighscores,
+  //     img3: imdbLost,
+  //   },
+  // },
 ]
