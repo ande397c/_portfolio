@@ -5,24 +5,20 @@ interface Props {
   id?: string
 }
 const { value, link, id } = Astro.props
+const buttonClasses =
+  'bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body'
 ---
 
 {
-  link ? (
+  link && value ? (
     <a href={link} target="_blank">
-      <button
-        id={id && id}
-        class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body"
-      >
+      <button id={id} class={buttonClasses}>
         {value}
       </button>
     </a>
-  ) : (
-    <button
-      id={id && id}
-      class="bg-body rounded-xl border flex justify-center items-center border-accent_red text-accent_red h-8 w-32 hover:bg-accent_red hover:text-body"
-    >
+  ) : link === undefined && value ? (
+    <button id={id} class={buttonClasses}>
       {value}
     </button>
-  )
+  ) : null
 }
