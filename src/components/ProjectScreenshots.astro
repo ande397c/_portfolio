@@ -1,5 +1,4 @@
 ---
-// Images
 import { Image } from 'astro:assets'
 const { img_1, img_2, img_3 } = Astro.props
 
@@ -23,19 +22,19 @@ const { altText } = Astro.props
 
     <div class="flex gap-2 justify-between pt-6 tablet:pt-0 tablet:flex-col">
       <Image
-        class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 active-screenshot"
+        class="screenshot max-w-[6rem] bp-460:max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 active-screenshot"
         src={img_1}
         alt={`screenshot ${altText} project`}
       />
 
       <Image
-        class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100"
+        class="screenshot max-w-[6rem] bp-460:max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100"
         src={img_2}
         alt={`screenshot ${altText} project`}
       />
 
       <Image
-        class="screenshot max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100"
+        class="screenshot max-w-[6rem] bp-460:max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100"
         src={img_3}
         alt={`screenshot ${altText} project`}
       />
