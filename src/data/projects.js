@@ -57,7 +57,7 @@ export const projectData = [
     repoLink: 'https://github.com/ande397c/Frontend-Mentor-rest-countries-api',
     stack: ['HTML', 'CSS', 'JavaScript'],
     navigateLinks: {
-      linkPrevious: 'projects/twitter-clone/',
+      linkPrevious: '/projects/twitter-clone/',
       linkNext: '/projects/rating-game/',
     },
     screenshots: {
