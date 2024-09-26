@@ -1,28 +1,26 @@
 ---
 import { Image } from 'astro:assets'
+import Chip from '@components/Chip.astro'
 const { data } = Astro.props
 ---
 
 <a href={data.slug} class="w-fit mx-auto">
   <article
-    class="cursor-pointer group hover:-translate-y-2 transition duration-150"
+    class="cursor-pointer transition duration-150 group/card group-hover/container:opacity-100 tablet:group-hover/container:opacity-60 tablet:hover:!opacity-100"
   >
-    <h2
-      class="text-text text-xl tablet:text-2xl mb-4 group-hover:text-accent_green"
-    >
+    <h2 class="text-text text-xl tablet:text-2xl mb-4 group-hover/card:text-accent_green">
       {data.heading}
     </h2>
-    <div class="relative h-64">
-      <Image
-        transition:name={data.tag}
-        class="w-full h-full rounded-lg"
-        src={data.projectImg}
-        alt={data.heading}
-      />
+    <div class="relative mobile:h-64 desktop:w-[500px]">
+      <Image class="w-full h-full rounded-lg" src={data.projectImg} alt={data.heading} />
     </div>
-
-    <p class="py-4 text-base tablet:text-lg max-w-[60ch] tablet:max-w-[45ch] text-grey">
-      {data.desc}
-    </p>
+    <div>
+      <p class="pt-4 pb-2 max-w-[60ch] tablet:max-w-[45ch] text-grey">
+        {data.desc}
+      </p>
+      <div class="flex gap-2">
+        {data.stack.map((stack: string) => <Chip value={stack} />)}
+      </div>
+    </div>
   </article>
 </a>

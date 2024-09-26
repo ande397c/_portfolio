@@ -3,8 +3,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 AOS.init()
 
-document.addEventListener('astro:beforeload', documentReady)
-documentReady();
+document.addEventListener('DOMContentLoaded', documentReady)
 
 function documentReady() {
   // Toggle burgermenu on click

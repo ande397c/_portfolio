@@ -59,7 +59,7 @@ import { projectData } from '@data/projects'
         </h2>
       </div>
       <section
-        class="grid gap-6 justify-center content-center tablet:grid-cols-2 tablet:gap-10"
+        class="grid gap-10 tablet:gap-8 justify-center content-center bp-730:grid-cols-2 bp-730:gap-10 group/container"
       >
         {projectData.map((data) => <ProjectCard data={data} />)}
       </section>
@@ -118,8 +118,8 @@ import { projectData } from '@data/projects'
 
   /* ................. Scroll indicator .......... */
   .scroll-indicator {
-    width: 40px;
-    height: 60px;
+    width: 35px;
+    height: 55px;
     border: 2px solid var(--color-accent-green);
     border-radius: 50px;
     position: relative;
@@ -132,8 +132,8 @@ import { projectData } from '@data/projects'
     position: absolute;
     top: 0.5em;
     left: 50%;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background-color: var(--color-accent-green);
     border-radius: 50%;
     transform: translate(-50%, 0);
@@ -177,3 +177,5 @@ import { projectData } from '@data/projects'
     background-color: var(--color-body);
   }
 </style>
+
+<script></script>

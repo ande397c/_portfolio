@@ -1,13 +1,19 @@
 // Project images:: 
 
+// Twitter
+import twitterIntro from '@assets/twitter-intro.png'
+import twitterAdmin from '@assets/twitter-admin.png'
+import twitterTweet from '@assets/twitter-tweet.png'
+import twitterProfile from '@assets/twitter-profile.png'
+
 // Countries
-import countriesImage from '@assets/countries-overview.png'
+import countriesImage from '@assets/countries-intro.png'
 import countriesOverviewLight from '@assets/countries-overview-light.png'
 import countriesDetailed from '@assets/countries-detailed.png'
 import countriesFiltered from '@assets/countries-filtered.png'
 //Imdb
-import imdbImage from '@assets/imdb-playing.png'
-import imdbIntro from '@assets/imdb-intro.png'
+import imdbImage from '@assets/imdb-intro.png'
+import imdbIntro from '@assets/imdb-rules.png'
 import imdbHighscores from '@assets/imdb-highscores.png'
 import imdbLost from '@assets/imdb-lost.png'
 // Weather
@@ -19,10 +25,31 @@ import weatherSingle2 from '@assets/weather-single-2.png'
 
 export const projectData = [
   {
+    slug: 'projects/twitter-clone/',
+    heading: 'Twitter clone',
+    projectImg: twitterIntro,
+    desc: 'Full stack Twitter clone hostet with PythonAnywhere. Check in and see what people are tweeting these days.',
+    tag: 'twitter',
+    intro:
+      'This project was part of my 1. semester Web Developement exam. The overall project included a long list of features and requirements, like creating, retweeting and liking tweets. This project also served as my introduction to Python, Bottle and SQL databases. To login, please use email: elonmusk@gmail.com and password: password.',
+    demoLink: 'https://ande.eu.pythonanywhere.com/',
+    repoLink: '',
+    stack: ['Tailwind', 'JavaScript', 'Python', 'Bottle', 'SQLite'],
+    navigateLinks: {
+      linkPrevious: '',
+      linkNext: '/projects/countries-project/',
+    },
+    screenshots: {
+      img1: twitterAdmin,
+      img2: twitterTweet,
+      img3: twitterProfile,
+    },
+  },
+  {
     slug: 'projects/countries-project/',
     heading: 'Countries API project',
     projectImg: countriesImage,
-    desc: 'Frontend Mentor project with light/dark theme. Made with vanilla JavaScript.',
+    desc: 'Advanced Frontend Mentor challenge. Supports light/dark them and made with vanilla JavaScript.',
     tag: 'countries',
     intro:
       'This project is an advanced challenge on Frontend Mentor. The goal for me was to improve my JavaScript skills while incorporating the use of an external API. The project supports dark/light theme. In retrospect, I would have liked to include the use of a JavaScript framework in this project.',
@@ -30,7 +57,7 @@ export const projectData = [
     repoLink: 'https://github.com/ande397c/Frontend-Mentor-rest-countries-api',
     stack: ['HTML', 'CSS', 'JavaScript'],
     navigateLinks: {
-      linkPrevious: '',
+      linkPrevious: 'projects/twitter-clone/',
       linkNext: '/projects/rating-game/',
     },
     screenshots: {
@@ -43,10 +70,10 @@ export const projectData = [
     slug: 'projects/rating-game/',
     heading: 'Movie rating game',
     projectImg: imdbImage,
-    desc: 'Guess which movie has the highest rating. Game made with React and TypeScript. Can you beat the current highscore?',
+    desc: 'Can you guess which movie has the highest rating? Try and see if you can beat the current highscore.',
     tag: 'imdb',
     intro:
-      'The idea for the project sprung from an early unbound fascination and interest for movies. The goal for the user is to correctly guess the movie with highest rating. The user can submit the score and compare it against other users. The site uses Supabase for storing the data. Future plans for this project includes: Ability to choose categories, difficulties and more.',
+      'The idea for the project sprung from an early unbound fascination and interest for movies. The goal for the user is to correctly guess the movie with highest rating. The user can submit the score and compare it against other users. The site uses offical Imdb rating scores and Supabase for storing the user data. Future plans for this project includes: Ability to choose categories, difficulties and more.',
     demoLink: 'https://rating-guess.netlify.app/',
     repoLink: 'https://github.com/ande397c/react-movie-rating/tree/main',
     stack: ['Tailwind', 'React', 'TypeScript', 'Supabase'],
@@ -64,7 +91,7 @@ export const projectData = [
     slug: 'projects/weather-app/',
     heading: 'Weather app',
     projectImg: weahterIntro,
-    desc: 'IOS weather app clone. Made with React, Tailwind and Typescript',
+    desc: 'IOS weather app clone. See detailed weather information for any location and save it to the frontpage.',
     tag: 'weather',
     intro:
       'This project is a clone of the iOS Weather app. It uses Axios for easier integration with the OpenWeatherMap API and ESLint to identify and fix issues in the JavaScript code. The goal is to replicate the UI elements and features of the iOS app. In the future, this project will serve as a solid foundation for working with mobile development, such as React Native or Expo.',

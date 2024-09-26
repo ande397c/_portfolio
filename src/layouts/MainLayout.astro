@@ -13,10 +13,10 @@ import ToTop from '@components/ToTop.astro'
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <!-- <ViewTransitions /> -->
-    <title>Anders Iversen portfolio</title>
+    <title>Anders Iversen</title>
   </head>
   <body>
-    <div class="overflow-x-hidden">
+    <div id="background_wrapper" class="overflow-x-hidden">
       <Header />
       <slot />
       <ToTop />
@@ -24,3 +24,26 @@ import ToTop from '@components/ToTop.astro'
     </div>
   </body>
 </html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    addEventListener('mousemove', getCursorPos, false)
+    addEventListener('resize', getViewportWidth, false)
+  })
+
+  function getCursorPos(p: { pageX: number; pageY: number }) {
+    const backgroundWrapper = document.querySelector('#background_wrapper') as HTMLElement
+
+    if (getViewportWidth() > 1024) {
+      backgroundWrapper.style.background = `radial-gradient(600px at ${p.pageX}px ${p.pageY}px, rgba(82, 176, 163, 0.092), transparent 80%)`
+    }
+  }
+
+  function getViewportWidth() {
+    const vw = Math.max(
+      document.documentElement.clientWidth || 0,
+      window.innerWidth || 0,
+    )
+    return vw
+  }
+</script>
