@@ -1,4 +1,4 @@
-// Project images:: 
+// Project images::
 
 // Twitter
 import twitterIntro from '@assets/twitter-intro.png'
@@ -8,7 +8,8 @@ import countriesImage from '@assets/countries-intro.png'
 import imdbImage from '@assets/imdb-intro.png'
 // Weather
 import weahterIntro from '@assets/weather-intro.png'
-
+// Kanban
+import kanbanIntro from '@assets/kanban-intro.png'
 
 export const projectData = [
   {
@@ -72,23 +73,23 @@ export const projectData = [
     stack: ['Tailwind', 'React', 'TypeScript', 'REST API'],
     navigateLinks: {
       linkPrevious: '/projects/rating-game/',
+      linkNext: '/projects/kanban-board/',
+    },
+  },
+  {
+    slug: 'projects/kanban-board/',
+    heading: 'Kanban board',
+    projectImg: kanbanIntro,
+    desc: 'Kanban board, made with Vue3, Vuetify, Typescript and testet using Vitest.',
+    tag: 'kanban',
+    intro:
+      'This project served as an introduction to Vue and the corresponding technologies used such as the ui library Vuetify and the Vue testing tool Vitest. The board supports functionalities like, deleting/adding tasks and lists and dragging tasks. In regard to future plans for this project, I´am planning to hook the data up to a real backend to allow for data persistence. Furthermore I would like to implement the ability to edit cards and make the lists draggable.',
+    demoLink: 'https://vue-board-kanban.netlify.app/',
+    repoLink: 'https://github.com/ande397c/vue-kanban-board',
+    stack: ['Vuetify', 'Vue', 'TypeScript', 'Vitest'],
+    navigateLinks: {
+      linkPrevious: '/projects/weather-app/',
       linkNext: '',
     },
   },
-  // {
-  //   slug: 'projects/kanban-board/',
-  //   heading: 'Kanban board',
-  //   projectImg: imdbImage,
-  //   desc: 'Kanban board, made with Vue3, Vuetify, Typescript and testet using Vitest.',
-  //   tag: 'kanban',
-  //   intro:
-  //     'This project was made to introduce myself to Vue and to corresponding technologies, like the ui library Vuetify. The board supports functionalities like, deleting and adding tasks and lists and dragging tasks. I am planning to hook the data up to a real backend to allow for data persistence.',
-  //   demoLink: 'https://vue-board-kanban.netlify.app/',
-  //   repoLink: 'https://github.com/ande397c/vue-kanban-board',
-  //   stack: ['Vue', 'Vuetify', 'TypeScript', 'Vitest'],
-  //   navigateLinks: {
-  //     linkPrevious: '/projects/weather-app/',
-  //     linkNext: '',
-  //   },
-  // },
 ]
