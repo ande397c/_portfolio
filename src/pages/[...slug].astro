@@ -11,38 +11,74 @@ import Chip from '@components/Chip.astro'
 import Button from '@components/Button.astro'
 
 export async function getStaticPaths() {
-  return projectData.map(({ slug, heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots, tag }) => {
-    return {
-      params: { slug },
-      props: { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots, tag },
-    };
-  });
+  return projectData.map(
+    ({
+      slug,
+      heading,
+      projectImg,
+      intro,
+      demoLink,
+      repoLink,
+      stack,
+      navigateLinks,
+      screenshots,
+      tag,
+    }) => {
+      return {
+        params: { slug },
+        props: {
+          heading,
+          projectImg,
+          intro,
+          demoLink,
+          repoLink,
+          stack,
+          navigateLinks,
+          screenshots,
+          tag,
+        },
+      }
+    },
+  )
 }
 
-const { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, tag } = Astro.props;
+const {
+  heading,
+  projectImg,
+  intro,
+  demoLink,
+  repoLink,
+  stack,
+  navigateLinks,
+  tag,
+} = Astro.props
 
-
-const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpeg,jpg,png,gif}',
+)
 
 const filteredImageEntries = Object.entries(allImages).filter(([path]) => {
-  return path.includes(tag) && !path.includes(`${tag}-intro`);
-});
+  return path.includes(tag) && !path.includes(`${tag}-intro`)
+})
 
 const projectImages = await Promise.all(
   filteredImageEntries.map(async ([, imageImport]) => {
-    const image = await imageImport();
+    const image = await imageImport()
     return {
       image: image.default,
-    };
-  })
-);
+    }
+  }),
+)
 ---
+
 <ProjectLayout>
   <div class="mx-4">
     <h1 class="text-accent_green text-3xl mobile:text-5xl mb-6">{heading}</h1>
   </div>
 
-  <section class="grid items-center content-center tablet:[grid-template-columns:40%_65%] tablet:gap-3 mx-4">
+  <section
+    class="grid items-center content-center tablet:[grid-template-columns:40%_65%] tablet:gap-3 mx-4"
+  >
     <article>
       <p class="max-w-[45ch] sm:text-lg">{intro}</p>
 
@@ -64,18 +100,11 @@ const projectImages = await Promise.all(
   <section class="mx-4 mt-6">
     <h2 class="text-text text-2xl">Stack / technologies</h2>
     <article class="flex flex-wrap mt-4 justify-start gap-4 max-w-[70%]">
-      {stack.map((value: string)=>(
-        <Chip value={value} />
-      ))}
+      {stack.map((value: string) => <Chip value={value} />)}
     </article>
   </section>
 
-  <ProjectScreenshots
-    img_1={projectImages[0].image}
-    img_2={projectImages[1].image}
-    img_3={projectImages[2].image}
-    altText={heading}
-  />
+  <ProjectScreenshots projectImages={projectImages} altText={heading} />
 
   <ProjectNavigate
     linkPrevious={navigateLinks.linkPrevious}

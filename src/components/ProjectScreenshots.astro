@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets'
-const { img_1, img_2, img_3 } = Astro.props
 
+const {projectImages} = Astro.props
 const { altText } = Astro.props
 ---
 
@@ -15,29 +15,19 @@ const { altText } = Astro.props
       <Image
         id="main-screenshot"
         class="w-full h-full rounded-lg"
-        src={img_1}
+        src={projectImages[0].image}
         alt={`screenshot ${altText} project`}
       />
     </div>
 
     <div class="flex gap-2 justify-between pt-6 tablet:pt-0 tablet:flex-col">
-      <Image
-        class="screenshot max-w-[6rem] bp-460:max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100 active-screenshot"
-        src={img_1}
-        alt={`screenshot ${altText} project`}
-      />
-
-      <Image
+    {projectImages.map((projectImg: any)=>(
+       <Image
         class="screenshot max-w-[6rem] bp-460:max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100"
-        src={img_2}
+        src={projectImg.image}
         alt={`screenshot ${altText} project`}
       />
-
-      <Image
-        class="screenshot max-w-[6rem] bp-460:max-w-[8rem] bp-730:max-w-[10rem] max-h-24 transition duration-150 cursor-pointer rounded-lg hover:scale-[1.1] hover:opacity-100"
-        src={img_3}
-        alt={`screenshot ${altText} project`}
-      />
+    ))}
     </div>
   </article>
 </section>
@@ -57,9 +47,15 @@ const { altText } = Astro.props
 
 <script>
   const screenshots = document.querySelectorAll('.screenshot')
-
-  screenshots.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
+  document.addEventListener('DOMContentLoaded', initiateFunc)
+  
+  function initiateFunc() {
+    screenshots[0].classList.add('active-screenshot')
+    screenshots.forEach((btn) => {
+      btn.addEventListener('click', (e) => {highlightClikedImg(e)})
+    })
+    
+    function highlightClikedImg(e: Event) {
       screenshots.forEach(
         (img) => img != e.target && img.classList.remove('active-screenshot'),
       )
@@ -79,6 +75,7 @@ const { altText } = Astro.props
         mainScreenshot.src = activeSrc
       }
       return false
-    })
-  })
+    }
+
+  }
 </script>
