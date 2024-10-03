@@ -11,15 +11,31 @@ import Chip from '@components/Chip.astro'
 import Button from '@components/Button.astro'
 
 export async function getStaticPaths() {
-  return projectData.map(({ slug, heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots }) => {
+  return projectData.map(({ slug, heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots, tag }) => {
     return {
       params: { slug },
-      props: { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots },
+      props: { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots, tag },
     };
   });
 }
 
-const { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, screenshots } = Astro.props;
+const { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, tag } = Astro.props;
+
+
+const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+
+const filteredImageEntries = Object.entries(allImages).filter(([path]) => {
+  return path.includes(tag) && !path.includes(`${tag}-intro`);
+});
+
+const projectImages = await Promise.all(
+  filteredImageEntries.map(async ([, imageImport]) => {
+    const image = await imageImport();
+    return {
+      image: image.default,
+    };
+  })
+);
 ---
 <ProjectLayout>
   <div class="mx-4">
@@ -55,9 +71,9 @@ const { heading, projectImg, intro, demoLink, repoLink, stack, navigateLinks, sc
   </section>
 
   <ProjectScreenshots
-    img_1={screenshots.img1}
-    img_2={screenshots.img2}
-    img_3={screenshots.img3}
+    img_1={projectImages[0].image}
+    img_2={projectImages[1].image}
+    img_3={projectImages[2].image}
     altText={heading}
   />
 

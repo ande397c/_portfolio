@@ -2,25 +2,12 @@
 
 // Twitter
 import twitterIntro from '@assets/twitter-intro.png'
-import twitterAdmin from '@assets/twitter-admin.png'
-import twitterTweet from '@assets/twitter-tweet.png'
-import twitterProfile from '@assets/twitter-profile.png'
-
 // Countries
 import countriesImage from '@assets/countries-intro.png'
-import countriesOverviewLight from '@assets/countries-overview-light.png'
-import countriesDetailed from '@assets/countries-detailed.png'
-import countriesFiltered from '@assets/countries-filtered.png'
 //Imdb
 import imdbImage from '@assets/imdb-intro.png'
-import imdbIntro from '@assets/imdb-rules.png'
-import imdbHighscores from '@assets/imdb-highscores.png'
-import imdbLost from '@assets/imdb-lost.png'
 // Weather
 import weahterIntro from '@assets/weather-intro.png'
-import weatherEdit from '@assets/weather-edit.png'
-import weatherSingle from '@assets/weather-single.png'
-import weatherSingle2 from '@assets/weather-single-2.png'
 
 
 export const projectData = [
@@ -39,11 +26,6 @@ export const projectData = [
       linkPrevious: '',
       linkNext: '/projects/countries-project/',
     },
-    screenshots: {
-      img1: twitterAdmin,
-      img2: twitterTweet,
-      img3: twitterProfile,
-    },
   },
   {
     slug: 'projects/countries-project/',
@@ -59,11 +41,6 @@ export const projectData = [
     navigateLinks: {
       linkPrevious: '/projects/twitter-clone/',
       linkNext: '/projects/rating-game/',
-    },
-    screenshots: {
-      img1: countriesOverviewLight,
-      img2: countriesDetailed,
-      img3: countriesFiltered,
     },
   },
   {
@@ -81,15 +58,10 @@ export const projectData = [
       linkPrevious: '/projects/countries-project/',
       linkNext: '/projects/weather-app/',
     },
-    screenshots: {
-      img1: imdbIntro,
-      img2: imdbHighscores,
-      img3: imdbLost,
-    },
   },
   {
     slug: 'projects/weather-app/',
-    heading: 'Weather app',
+    heading: 'Weather app clone',
     projectImg: weahterIntro,
     desc: 'IOS weather app clone. See detailed weather information for any location and save it to the frontpage.',
     tag: 'weather',
@@ -101,11 +73,6 @@ export const projectData = [
     navigateLinks: {
       linkPrevious: '/projects/rating-game/',
       linkNext: '',
-    },
-    screenshots: {
-      img1: weatherEdit,
-      img2: weatherSingle,
-      img3: weatherSingle2,
     },
   },
   // {
@@ -122,11 +89,6 @@ export const projectData = [
   //   navigateLinks: {
   //     linkPrevious: '/projects/weather-app/',
   //     linkNext: '',
-  //   },
-  //   screenshots: {
-  //     img1: imdbIntro,
-  //     img2: imdbHighscores,
-  //     img3: imdbLost,
   //   },
   // },
 ]
