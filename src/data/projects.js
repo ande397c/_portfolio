@@ -80,7 +80,7 @@ export const projectData = [
     slug: 'projects/kanban-board/',
     heading: 'Kanban board',
     projectImg: kanbanIntro,
-    desc: 'Kanban board, made with Vue3, Vuetify, Typescript and testet using Vitest.',
+    desc: 'Kanban board, made with Vue3, Vuetify, Typescript and tested using Vitest.',
     tag: 'kanban',
     intro:
       'This project served as an introduction to Vue and the corresponding technologies used such as the ui library Vuetify and the Vue testing tool Vitest. The board supports functionalities like, deleting/adding tasks and lists and dragging tasks. In regard to future plans for this project, I´am planning to hook the data up to a real backend to allow for data persistence. Furthermore I would like to implement the ability to edit cards and make the lists draggable.',

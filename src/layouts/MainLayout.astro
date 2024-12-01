@@ -26,6 +26,8 @@ import ToTop from '@components/ToTop.astro'
 </html>
 
 <script>
+  const desktopSize = 1024
+
   document.addEventListener('DOMContentLoaded', () => {
     addEventListener('mousemove', getCursorPos, false)
     addEventListener('resize', getViewportWidth, false)
@@ -34,7 +36,7 @@ import ToTop from '@components/ToTop.astro'
   function getCursorPos(p: { pageX: number; pageY: number }) {
     const backgroundWrapper = document.querySelector('#background_wrapper') as HTMLElement
 
-    if (getViewportWidth() > 1024) {
+    if (getViewportWidth() > desktopSize) {
       backgroundWrapper.style.background = `radial-gradient(600px at ${p.pageX}px ${p.pageY}px, rgba(82, 176, 163, 0.092), transparent 80%)`
     }
   }
