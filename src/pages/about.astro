@@ -17,11 +17,16 @@ import { Image } from 'astro:assets'
         About me
       </h1>
     </div>
-    <article
-      class="flex justify-center items-center flex-wrap tablet:gap-8"
-    >
+    <article class="flex justify-center items-center flex-wrap tablet:gap-8">
       <p class="max-w-[45ch] pb-6 text-base mobile:text-lg">
-        Hello there! I'm Anders, a 25-year-old passionate Web Developer who loves exploring the world of coding. I graduated from KEA - Copenhagen School of Design and Technology, where I delved into both frontend and backend development. My education provided a solid foundation in design principles and user experience, fueling my enthusiasm for creating visually appealing and functional websites. I'm eager to continue exploring this dynamic field and tackle new challenges with creativity and technical expertise.
+        Hello there! I'm Anders, a 25-year-old passionate Web Developer who
+        loves exploring the world of coding. I graduated from KEA - Copenhagen
+        School of Design and Technology, where I delved into both frontend and
+        backend development. My education provided a solid foundation in design
+        principles and user experience, fueling my enthusiasm for creating
+        visually appealing and functional websites. I'm eager to continue
+        exploring this dynamic field and tackle new challenges with creativity
+        and technical expertise.
       </p>
       <Image
         class="w-[12rem] h-[12rem] bp-460:w-[17rem] bp-460:h-[17rem] tablet:h-[17rem] tablet:w-[17rem] block mx-auto"
@@ -29,9 +34,11 @@ import { Image } from 'astro:assets'
         alt="portrat"
       />
     </article>
-    <section class="mt-20 mobile:mt-4 pb-4 desktop:h-[20vh] tablet:max-w-3xl">
+    <section class="mt-20 mobile:mt-4 pb-4 desktop:h-[27vh] tablet:max-w-3xl">
       <h2 class="text-text text-2xl">Skills and experiences</h2>
-      <article class="flex flex-wrap mt-3 bp-460:justify-start justify-center gap-4 pt-2">
+      <article
+        class="flex flex-wrap mt-3 bp-460:justify-start justify-center gap-4 pt-2"
+      >
         {skills.map((skill) => <Chip value={skill} />)}
       </article>
     </section>
